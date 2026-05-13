@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PicShare - Privacy Policy</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      h2 {
+        color: #555;
+        margin-top: 30px;
+      }
+      .tbd {
+        background: #fff3cd;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- English -->
+    <section lang="en">
+      <h1>Privacy Policy for PicShare</h1>
+      <p><strong>Last Updated:</strong> May 13, 2026</p>
+
+      <h2>Introduction</h2>
+      <p>
+        PicShare ("we", "our", or "the app") respects your privacy. This Privacy
+        Policy explains what personal data the app collects, how it is stored,
+        and what rights you have over your data. It applies to anyone who creates
+        an account as a host or joins an event as a guest.
+      </p>
+
+      <h2>Information We Collect</h2>
+
+      <h3>From hosts (registered users)</h3>
+      <ul>
+        <li>
+          <strong>Email address</strong> — used to sign in and to send account
+          recovery messages if needed.
+        </li>
+        <li>
+          <strong>Password</strong> — stored as a salted BCrypt hash. The
+          plaintext password never reaches our servers in storable form.
+        </li>
+        <li>
+          <strong>Display name</strong> chosen during registration.
+        </li>
+        <li>
+          <strong>Profile photo</strong> (optional) — used as your avatar across
+          events you host.
+        </li>
+      </ul>
+
+      <h3>From guests (joining via an invite code)</h3>
+      <ul>
+        <li>
+          <strong>Display name</strong> chosen when you enter the event.
+        </li>
+        <li>
+          <strong>Profile photo</strong> (optional) — visible to other
+          participants of the same event only.
+        </li>
+        <li>
+          <strong>Device identifier (DeviceId)</strong> — a randomly generated
+          UUID created on first launch and stored on your device. It is used to
+          recognise you when you return to an event you have previously joined,
+          so you don't have to re-enter your name. It is not linked to your
+          phone number, IMEI, advertising ID, or any other system identifier,
+          and it is not shared outside PicShare.
+        </li>
+      </ul>
+
+      <h3>From all participants in an event</h3>
+      <ul>
+        <li>
+          <strong>Photos</strong> you upload, along with the time the photo was
+          taken (if available from the photo's metadata) and the time it was
+          uploaded.
+        </li>
+        <li>
+          <strong>Reactions</strong> (emoji), votes in challenges, and challenge
+          entries you create.
+        </li>
+        <li>
+          <strong>Points</strong> earned through participation, computed from
+          your activity within events.
+        </li>
+        <li>
+          <strong>Reports</strong> you submit, including any reason text you
+          choose to attach.
+        </li>
+      </ul>
+
+      <h3>What we do NOT collect</h3>
+      <p>
+        PicShare does not collect or access your phone number, contacts list,
+        location, browsing history, microphone, or any data outside the app.
+        Camera and photo-library access is requested only when you actively
+        choose to take a photo or pick one from your library, and is not used
+        in the background.
+      </p>
+
+      <h2>How We Store Your Data</h2>
+      <p>
+        Account information, event metadata, photo metadata (uploader, time,
+        approval status, reactions, etc.), and gameplay data are stored in a SQL
+        database hosted on the PicShare backend.
+        <span class="tbd">[TBD: confirm hosting region once production
+        deployment is final — planned: Microsoft Azure, region within the
+        European Union.]</span>
+      </p>
+      <p>
+        Photo files are stored as opaque, randomly-named files (UUID-based) in
+        the backend's storage layer. Filenames do not contain personally
+        identifying information; attribution is held separately in the database
+        and only released to participants of the same event.
+      </p>
+      <p>
+        On your device, the app stores: your authentication tokens (so you stay
+        signed in), your selected language preference, your generated DeviceId,
+        and any photos you have taken inside the app but not yet submitted to
+        an event ("drafts"). This local data is cleared when you log out or
+        uninstall the app.
+      </p>
+
+      <h2>Third-Party Services</h2>
+      <p>
+        PicShare does not currently use third-party analytics, advertising
+        networks, crash-reporting services, or behavioural tracking. We do not
+        sell, rent, or share your personal data with third parties.
+        <span class="tbd">[TBD: if you add Sentry, Firebase, or similar later,
+        this section must list them with links to their privacy policies.]</span>
+      </p>
+
+      <h2>Photos and Moderation</h2>
+      <p>
+        Photos you upload are visible only to other participants of the same
+        event. The host (and any co-hosts they appoint) can approve or reject
+        uploaded photos before they appear in the shared feed, and may take down
+        approved photos afterwards if needed (for example, in response to a
+        privacy request). Any guest can report a photo with an optional reason;
+        the host receives the report and decides how to act on it.
+      </p>
+
+      <h2>How Long We Keep Your Data</h2>
+      <p>
+        We keep your data for as long as your account exists and the events you
+        are part of are active.
+        <span class="tbd">[TBD: state a concrete retention period after an event
+        is deleted — e.g. "all event data is permanently deleted within 30 days
+        of the host deleting the event".]</span>
+      </p>
+      <p>
+        If you are a guest who has been blocked from an event by its host, your
+        existing photos and reactions remain in that event's history (visible
+        only to that event's participants), but your session is invalidated and
+        you cannot rejoin the event from the same device. To have your content
+        removed entirely, contact the event host or email us at the address
+        below.
+      </p>
+
+      <h2>Your Rights</h2>
+      <p>
+        Within the app you can:
+      </p>
+      <ul>
+        <li>Edit your name and profile photo at any time.</li>
+        <li>Leave an event you have joined.</li>
+        <li>
+          As a host: delete an event, which cascade-deletes all photos,
+          reactions, and other content associated with that event.
+        </li>
+      </ul>
+      <p>
+        If you are based in the EU/EEA, the General Data Protection Regulation
+        (GDPR) gives you the right to:
+      </p>
+      <ul>
+        <li>Access the personal data we hold about you.</li>
+        <li>Correct data that is inaccurate or incomplete.</li>
+        <li>Request deletion of your data.</li>
+        <li>Object to or restrict how we process your data.</li>
+        <li>Receive a copy of your data in a portable format.</li>
+        <li>
+          Lodge a complaint with the Swedish Data Protection Authority
+          (Integritetsskyddsmyndigheten),
+          <a href="https://www.imy.se">https://www.imy.se</a>.
+        </li>
+      </ul>
+      <p>
+        To exercise any of these rights, email us at the address below. We will
+        respond within 30 days.
+      </p>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        PicShare is intended for general audiences. We do not knowingly collect
+        personal data from children under 13. If you are a parent or guardian
+        and you believe your child has provided personal data to us, please
+        contact us and we will take steps to delete that data.
+        <span class="tbd">[TBD: confirm the minimum age you want to advertise —
+        13 (COPPA) and 16 (GDPR default) are common thresholds.]</span>
+      </p>
+
+      <h2>Data Security</h2>
+      <ul>
+        <li>Host passwords are hashed using BCrypt before storage.</li>
+        <li>
+          API authentication uses JSON Web Tokens (JWT) signed with HMAC-SHA256,
+          with short-lived access tokens (7 days) and refresh tokens (30 days).
+        </li>
+        <li>
+          Guests authenticate using event-scoped session tokens that can be
+          revoked by the host at any time (when blocking a guest).
+        </li>
+        <li>
+          Network traffic in production is encrypted using HTTPS/TLS.
+        </li>
+        <li>
+          Photos and metadata are isolated per event — guests of one event
+          cannot access another event's content.
+        </li>
+      </ul>
+
+      <h2>Data Controller</h2>
+      <p>
+        The data controller responsible for PicShare's processing of personal
+        data is:
+      </p>
+      <p>
+        <span class="tbd">[TBD: full legal name and (if applicable) registered
+        address of the controller — i.e. you as a private person, or a company
+        if PicShare is published through one.]</span><br />
+        Sweden
+      </p>
+
+      <h2>Changes to This Privacy Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Any changes will be
+        posted on this page with an updated "Last Updated" date at the top. If
+        the changes are material, we will take reasonable steps to notify you
+        in the app before the new policy takes effect.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please contact us
+        at:
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:picshare.christineb@gmail.com">picshare.christineb@gmail.com</a>
+      </p>
+
+      <h2>Consent</h2>
+      <p>By using PicShare, you consent to this Privacy Policy.</p>
+    </section>
+
+    <hr />
+
+    <!-- SVENSKA -->
+    <section lang="sv" id="sv">
+      <h1>Integritetspolicy för PicShare</h1>
+      <p><strong>Senast uppdaterad:</strong> 13 maj 2026</p>
+
+      <h2>Inledning</h2>
+      <p>
+        PicShare ("vi", "vår" eller "appen") respekterar din integritet. Den
+        här integritetspolicyn beskriver vilka personuppgifter appen samlar in,
+        hur de lagras och vilka rättigheter du har över dina uppgifter. Den
+        gäller alla som skapar ett konto som värd eller ansluter sig till ett
+        event som gäst.
+      </p>
+
+      <h2>Information vi samlar in</h2>
+
+      <h3>Från värdar (registrerade användare)</h3>
+      <ul>
+        <li>
+          <strong>E-postadress</strong> — används för inloggning och för
+          eventuella återställningsmeddelanden.
+        </li>
+        <li>
+          <strong>Lösenord</strong> — lagras som en saltad BCrypt-hash.
+          Klartextlösenordet når aldrig våra servrar i lagringsbar form.
+        </li>
+        <li>
+          <strong>Visningsnamn</strong> som du väljer vid registreringen.
+        </li>
+        <li>
+          <strong>Profilbild</strong> (valfritt) — används som din avatar i de
+          event du är värd för.
+        </li>
+      </ul>
+
+      <h3>Från gäster (anslutna via en inbjudningskod)</h3>
+      <ul>
+        <li>
+          <strong>Visningsnamn</strong> som du anger när du går med i eventet.
+        </li>
+        <li>
+          <strong>Profilbild</strong> (valfritt) — synlig endast för andra
+          deltagare i samma event.
+        </li>
+        <li>
+          <strong>Enhetsidentifierare (DeviceId)</strong> — en slumpgenererad
+          UUID som skapas vid första starten och lagras på din enhet. Den
+          används för att känna igen dig när du återvänder till ett event du
+          tidigare anslutit dig till, så att du slipper ange ditt namn igen.
+          Den är inte kopplad till ditt telefonnummer, IMEI, reklam-ID eller
+          någon annan systemidentifierare, och delas aldrig utanför PicShare.
+        </li>
+      </ul>
+
+      <h3>Från alla deltagare i ett event</h3>
+      <ul>
+        <li>
+          <strong>Foton</strong> du laddar upp, tillsammans med tidpunkten då
+          fotot togs (om informationen finns i fotots metadata) och när det
+          laddades upp.
+        </li>
+        <li>
+          <strong>Reaktioner</strong> (emoji), röster i utmaningar och de
+          bidrag du gör.
+        </li>
+        <li>
+          <strong>Poäng</strong> som du tjänar genom deltagande, beräknat utifrån
+          din aktivitet i eventen.
+        </li>
+        <li>
+          <strong>Rapporter</strong> du skickar in, inklusive eventuell
+          anledningstext du väljer att bifoga.
+        </li>
+      </ul>
+
+      <h3>Det vi INTE samlar in</h3>
+      <p>
+        PicShare samlar inte in eller använder ditt telefonnummer, dina
+        kontakter, din plats, surfhistorik, mikrofon eller någon data utanför
+        appen. Åtkomst till kamera och bildbibliotek begärs endast när du
+        aktivt väljer att ta ett foto eller välja ett från ditt bibliotek, och
+        används aldrig i bakgrunden.
+      </p>
+
+      <h2>Hur vi lagrar dina uppgifter</h2>
+      <p>
+        Kontoinformation, event-metadata, foto-metadata (uppladdare, tidpunkt,
+        godkännandestatus, reaktioner osv.) och spelrelaterad data lagras i en
+        SQL-databas hostad på PicShares backend.
+        <span class="tbd">[TBD: bekräfta hostingregion när produktionsdeploy är
+        klar — planerat: Microsoft Azure, region inom EU.]</span>
+      </p>
+      <p>
+        Fotofiler lagras som opaka, slumpmässigt namnsatta filer (UUID-baserade)
+        i backendens lagringslager. Filnamnen innehåller inga
+        personidentifierande uppgifter; kopplingen till uppladdaren hålls
+        separat i databasen och visas bara för deltagare i samma event.
+      </p>
+      <p>
+        På din enhet lagrar appen: dina autentiseringstokens (så att du förblir
+        inloggad), ditt valda språk, din genererade DeviceId och eventuella
+        foton du tagit inne i appen men ännu inte skickat in till ett event
+        ("utkast"). Den här lokala datan rensas när du loggar ut eller
+        avinstallerar appen.
+      </p>
+
+      <h2>Tredjepartstjänster</h2>
+      <p>
+        PicShare använder för närvarande inga tredjepartstjänster för analys,
+        annonser, kraschrapportering eller beteendespårning. Vi säljer, hyr ut
+        eller delar inte dina personuppgifter med tredje part.
+        <span class="tbd">[TBD: om Sentry, Firebase eller liknande läggs till
+        senare måste denna sektion uppdateras med länkar till deras respektive
+        integritetspolicy.]</span>
+      </p>
+
+      <h2>Foton och moderering</h2>
+      <p>
+        Foton du laddar upp är endast synliga för andra deltagare i samma
+        event. Värden (och eventuella medvärdar som värden utser) kan godkänna
+        eller avvisa uppladdade foton innan de visas i det delade flödet, och
+        kan ta bort godkända foton i efterhand om det behövs (till exempel vid
+        en integritetsförfrågan). Vilken gäst som helst kan rapportera ett
+        foto med en valfri anledning; värden tar emot rapporten och beslutar
+        hur den ska hanteras.
+      </p>
+
+      <h2>Hur länge vi sparar dina uppgifter</h2>
+      <p>
+        Vi sparar dina uppgifter så länge ditt konto finns kvar och de event du
+        är en del av är aktiva.
+        <span class="tbd">[TBD: ange en konkret lagringsperiod efter att ett
+        event har raderats — t.ex. "all event-data raderas permanent inom 30
+        dagar efter att värden har raderat eventet".]</span>
+      </p>
+      <p>
+        Om du är en gäst som har blockerats från ett event av dess värd, ligger
+        dina befintliga foton och reaktioner kvar i eventets historik (synliga
+        endast för deltagarna i det eventet), men din session ogiltigförklaras
+        och du kan inte ansluta på nytt till eventet från samma enhet. Om du
+        vill att ditt innehåll ska raderas helt kan du kontakta event-värden
+        eller skicka e-post till oss på adressen nedan.
+      </p>
+
+      <h2>Dina rättigheter</h2>
+      <p>I appen kan du:</p>
+      <ul>
+        <li>Ändra ditt namn och din profilbild när som helst.</li>
+        <li>Lämna ett event du har anslutit dig till.</li>
+        <li>
+          Som värd: radera ett event, vilket också raderar alla foton,
+          reaktioner och annat innehåll kopplat till det eventet.
+        </li>
+      </ul>
+      <p>
+        Om du är bosatt inom EU/EES ger dataskyddsförordningen (GDPR) dig rätt
+        att:
+      </p>
+      <ul>
+        <li>Få tillgång till de personuppgifter vi har om dig.</li>
+        <li>Rätta uppgifter som är felaktiga eller ofullständiga.</li>
+        <li>Begära att dina uppgifter raderas.</li>
+        <li>
+          Invända mot eller begränsa vår behandling av dina uppgifter.
+        </li>
+        <li>
+          Få ut en kopia av dina uppgifter i ett portabelt format.
+        </li>
+        <li>
+          Lämna in klagomål till Integritetsskyddsmyndigheten,
+          <a href="https://www.imy.se">https://www.imy.se</a>.
+        </li>
+      </ul>
+      <p>
+        För att utöva någon av dessa rättigheter, kontakta oss på adressen
+        nedan. Vi besvarar din förfrågan inom 30 dagar.
+      </p>
+
+      <h2>Barns integritet</h2>
+      <p>
+        PicShare är avsedd för en bred publik. Vi samlar inte medvetet in
+        personuppgifter från barn under 13 år. Om du är förälder eller
+        vårdnadshavare och misstänker att ditt barn har lämnat personuppgifter
+        till oss, vänligen kontakta oss så raderar vi dem.
+        <span class="tbd">[TBD: bekräfta den åldersgräns du vill annonsera — 13
+        år (COPPA) och 16 år (GDPR-default) är vanliga tröskelvärden.]</span>
+      </p>
+
+      <h2>Datasäkerhet</h2>
+      <ul>
+        <li>
+          Värdarnas lösenord hashas med BCrypt innan de lagras.
+        </li>
+        <li>
+          API-autentisering sker med JSON Web Tokens (JWT) signerade med
+          HMAC-SHA256, med kortlivade åtkomsttoken (7 dagar) och
+          uppdateringstoken (30 dagar).
+        </li>
+        <li>
+          Gäster autentiseras med event-scopade sessionstoken som kan
+          återkallas av värden när som helst (vid blockering).
+        </li>
+        <li>
+          Nätverkstrafik i produktion krypteras med HTTPS/TLS.
+        </li>
+        <li>
+          Foton och metadata är isolerade per event — gäster i ett event kan
+          inte komma åt innehåll från ett annat event.
+        </li>
+      </ul>
+
+      <h2>Personuppgiftsansvarig</h2>
+      <p>
+        Personuppgiftsansvarig för PicShares behandling av personuppgifter är:
+      </p>
+      <p>
+        <span class="tbd">[TBD: fullständigt juridiskt namn och (om
+        tillämpligt) registrerad adress för den personuppgiftsansvariga — dvs.
+        du som privatperson, eller bolag om PicShare publiceras genom ett
+        sådant.]</span><br />
+        Sverige
+      </p>
+
+      <h2>Ändringar av denna integritetspolicy</h2>
+      <p>
+        Vi kan komma att uppdatera den här integritetspolicyn från tid till
+        annan. Eventuella ändringar publiceras på denna sida med ett
+        uppdaterat "Senast uppdaterad"-datum högst upp. Om ändringarna är
+        väsentliga kommer vi att vidta rimliga åtgärder för att informera dig
+        i appen innan den nya policyn träder i kraft.
+      </p>
+
+      <h2>Kontakta oss</h2>
+      <p>
+        Om du har några frågor om denna integritetspolicy, vänligen kontakta
+        oss på:
+      </p>
+      <p>
+        <strong>E-post:</strong>
+        <a href="mailto:picshare.christineb@gmail.com">picshare.christineb@gmail.com</a>
+      </p>
+
+      <h2>Samtycke</h2>
+      <p>
+        Genom att använda PicShare samtycker du till denna integritetspolicy.
+      </p>
+    </section>
+  </body>
+</html>
